@@ -22,18 +22,16 @@
         <form id="submit-form">
             <h1>Seed-based Dice Roller</h1>
             <p class="hint-text">For being random, but not *too* random.</p>
-            <!-- <script src="rolleranim.js"></script> -->
             <h2 id="result-number">00</h2>
             <div class="form-group">
                 <label for="inputName">Seed</label>
-                <input type="text" class="form-control" id="inputSeed" required>
+                <input type="text" id="inputSeed" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="rollType">Type of Roll</label>
                 <div class="row">
-                    <!-- <label for="RollType">Roll Type:</label> -->
 
-                    <select name="RollType" id="RollType">
+                    <select name="RollType" id="RollType" onchange="updateaBtnLabel()">
                     <option value="2">Coin</option>
                     <option value="4">D4</option>
                     <option value="6">D6</option>
@@ -41,12 +39,14 @@
                     <option value="10">D10</option>
                     <option value="12">D12</option>
                     <option value="20">D20</option>
+                    <option value="100">Percentage</option>
                     </select>
                 </div>
             </div>
             
-            <button type="button" id="rollbtn" class="btn btn-primary btn-block" onclick="roll()"><i class="fa fa-paper-plane"></i> Roll that Dice!</button>
+            <button type="button" id="rollbtn" class="btn btn-primary btn-block" onclick="roll()"><i class="fa fa-paper-plane"></i>Roll that Dice!</button>
         </form>
+        <p style="color:white; font-size: small;">Made by drone100000. Uses <a href="https://github.com/davidbau/seedrandom" target="_blank">seedrandom.js</a> by davidbau.</p>
     </div>
 </body>
 </html>
